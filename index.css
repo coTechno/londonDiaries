@@ -380,7 +380,7 @@ button:focus {
     font-size: 1rem;
   }
   #signup-popup {
-    display: block;
+    display: none;
     position: absolute;
     top: 10px;
     width: 400px;
