@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>London Diaries</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Comfortaa:700"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <div id="header" class="animated slideInDown" style="animation-delay: 1s">
+      <div id="title">London Diaries</div>
+      <br />
+      <div id="links">
+        <a href="#services">services</a>
+        <a href="#blog">blog</a>
+        <a href="#contact">contact</a>
+      </div>
+      <div id="links2">
+        <!-- <a href="#signup" role="button" class="btn_one" data-bs-toggle="modal">sign up</a> -->
+        <!-- <a href="#login" role="button" class="btn_one" data-bs-toggle="modal">login</a> -->
+
+        <button type="button" id="nav-signup" class="btn_one" data-bs-toggle="modal" data-bs-target="#signup">
+          sign up
+        </button>
+        <button type="button" id="nav-login" class="btn_one" data-bs-toggle="modal" data-bs-target="#login"></button>
+      </div>
+    </div>
+
+    <!-- SIGN UP -->
+    <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="signupLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content size-form" style="padding: 20px 20px; background: #110905">
+              <div id="signup-form">
+                  <div id="s-form">
+                    <form class="row g-3" id="signup-form-id">
+                      <h2 class="text-center">Sign Up</h2>
+                      <div class="col-md-6">
+                        <label for="first-name" class="form-label">First name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="first-name"
+                          required
+                          autocomplete="off"
+                        />
+                        <div class="valid-feedback" id="firstValid">Looks good!</div>
+                        <div class="invalid-feedback" id="firstInvalid">
+                          Please enter a your name.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="last-name" class="form-label">Last name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="last-name"
+                          required
+                          autocomplete="off"
+                        />
+                        <div class="valid-feedback" id="lastValid">Looks good!</div>
+                        <div class="invalid-feedback" id="lastInvalid">
+                          Please enter a your last name.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="email"
+                            aria-describedby="inputGroupPrepend"
+                            required
+                            autocomplete="off"
+                          />
+                          <div class="valid-feedback" id="emailValid">Looks good!</div>
+                          <div class="invalid-feedback" id="emailInvalid">
+                            Please enter a valid email.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="phone-number" class="form-label">Phone Number</label>
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend">+91</span>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="phone-number"
+                            aria-describedby="inputGroupPrepend"
+                            required
+                            autocomplete="off"
+                          />
+                          <div class="valid-feedback" id="phoneValid">Looks good!</div>
+                          <div class="invalid-feedback" id="phoneInvalid">
+                            Please enter a valid phone number.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          required
+                          autocomplete="off"
+                        />
+                        <div class="valid-feedback" id="passwordValid">Looks good!</div>
+                        <div class="invalid-feedback" id="passwordInvalid">
+                          password must be at least 6 characters.
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="confirm-password" class="form-label"
+                          >Confirm Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="confirm-password"
+                          required
+                          autocomplete="off"
+                        />
+                        <div class="invalid-feedback" id="confirm-password-invalid">
+                          Password and confirm password don't match.
+                        </div>
+                      </div>
+                      <div class="d-grid col-8 mx-auto my-4">
+                        <button class="btn_three" data-bs-dismiss="modal" type="button" onclick="signup()">
+                          Sign up
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+        </div>
+      </div>
+    </div>
+<!-- LOGIN -->
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="padding: 20px 20px; background: #110905">
+      <div id="login-form">
+          <div id="l-form">
+          <form class="row g-3 justify-content-center" id="login-form-id">
+            <h2 class="text-center">Login</h2>
+            <div class="col-md-8">
+              <label for="login-email" class="form-label">Email</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="login-email"
+                  aria-describedby="inputGroupPrepend"
+                  required
+                />
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <label for="login-password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="login-password"
+                required
+              />
+              <div class="invalid-feedback">Please provide a valid password.</div>
+              <div id="loginValid">Looks Good.</div>
+            </div>
+            <div class="d-grid col-8 mx-auto my-4">
+              <button class="btn_three" data-bs-dismiss="modal" type="button" onclick="login()">
+                Login
+              </button>
+            </div>
+          </form>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- ----------------------------signup-popup----------------------- -->
+
+<div class="dialog-box">
+  <div class="signup-popup " id="signup-popup">
+    <div class="text-center">
+    <h3 class="text-center my-4">Thank You!</h3>
+    <p class="text-center">Your details has been submitted successfully!</p>
+    <button type="button" class="btn_three" onclick="popupRemove()">OK</button>
+    </div>
+    </div>
+</div>
+  
+  <!-- -------------------------------login-popup---------------------------------- -->
+  
+  <div class="dialog-box">
+    <div class="login-popup" id="login-popup">
+      <div class="text-center">
+      <p class="text-center" id="alert"></p>
+      <button type="button" id="login-btn" class="btn_three" onclick="popupRemove()"></button>
+      </div>
+      </div>
+  </div>
+    <center>
+      <div id="middle">
+        <div id="tagline" class="animated zoomIn" style="animation-delay: 1.8s">
+          “The journey of a thousand miles begins with a single step.”<br />
+          <button class="btn_one">EXPLORE NOW</button>
+        </div>
+      </div>
+    </center>
+
+    <div id="portfolio">
+      <div id="services">
+        <h1>SERVICES.</h1>
+        <div>
+          <p>
+            When there’s so much choice for cheap holidays abroad, which
+            destination do you opt for? We always suggest choosing a sunny spot,
+            offering not only glorious sunshine but a range of activities and
+            sights to discover, and one which won’t cost you an arm and a leg
+            when you arrive, either.
+            <br />
+            <br />
+            Here at icelolly.com, we provide a fast and easy service, allowing
+            you to compare the best deals from a range of leading holiday
+            providers. All packages advertised by our holiday providers are ATOL
+            protected, so you get peace of mind as well as an affordable,
+            low-cost deal.
+          </p>
+        </div>
+      </div>
+
+      <div id="blog">
+        <h1>BLOG.</h1>
+
+        <div class="project">
+          <h2>THE BEST PACKAGE HOLIDAYS</h2>
+          <div>
+            Last-minute holidays come on a first-come, first-served basis to the
+            time of the holiday date, to fill spare flight seats and hotel
+            rooms. So, keep an eye out for cheap holiday deals, and once you
+            find the package best suited to your needs and preferences, ensure
+            you book right away to avoid the disappointment of losing out.
+          </div>
+          <button class="btn_one">BOOK NOW</button>
+        </div>
+        <div class="project">
+          <h2>COMPARE CHEAP HOLIDAYS</h2>
+          <div>
+            Last-minute holidays come on a first-come, first-served basis to the
+            time of the holiday date, to fill spare flight seats and hotel
+            rooms. So, keep an eye out for cheap holiday deals, and once you
+            find the package best suited to your needs and preferences, ensure
+            you book right away to avoid the disappointment of losing out.
+          </div>
+          <button class="btn_one">BOOK NOW</button>
+        </div>
+        <div class="project">
+          <h2>LAST MINUTE HOLIDAYS</h2>
+          <div>
+            Last-minute holidays come on a first-come, first-served basis to the
+            time of the holiday date, to fill spare flight seats and hotel
+            rooms. So, keep an eye out for cheap holiday deals, and once you
+            find the package best suited to your needs and preferences, ensure
+            you book right away to avoid the disappointment of losing out.
+          </div>
+          <button class="btn_one">BOOK NOW</button>
+          <button class="btn_two">KNOW MORE</button>
+        </div>
+      </div>
+
+      <div id="contact">
+        <h1>CONTACT.</h1>
+        <form>
+          <input  type="text" placeholder="name" required />
+          <input type="email" placeholder="email" required /><br />
+          <textarea placeholder="your message" required rows="5"></textarea
+          ><br />
+          <button class="btn_one">send</button>
+        </form>
+        <div id="details">
+          <a class="btn_social"><i class="fas fa-phone"></i></a>
+          <a class="btn_social"><i class="fas fa-at"></i></a>
+          <a class="btn_social"><i class="fab fa-twitter"></i></a>
+          <a class="btn_social"><i class="fab fa-dribbble"></i></a>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      Created By Zehra Khan <br /><br />
+      <a href="https://github.com/coTechno">Thank You</a>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="validation.js"></script>
+    <!-- Bootstrap for js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
